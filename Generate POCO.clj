@@ -16,7 +16,7 @@
 (def new-line "\r\n")
 
 (defn- poco-name [name]
-    (apply str (map clojure.string/capitalize (re-seq #"[A-Za-z\d]+" name))))
+    (apply str (map clojure.string/capitalize (re-seq #"(?:[A-Z]+)?[a-z\d]*" name))))
 
 (defn- poco-type [data-type is-null]
     (let [spec                (.. data-type getSpecification toLowerCase)
