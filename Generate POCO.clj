@@ -5,7 +5,8 @@
         [["bit"] "bool"]
         [["tinyint"] "byte"]
         [["uniqueidentifier"] "Guid"]
-        [["int"] "long"]
+        [["int"] "int"]
+        [["bigint"] "long"]
         [["char"] "char"]
         [["varbinary" "image"] "byte[]" true] ; cannot be null
         [["double" "float" "real"] "double"]
