@@ -11,7 +11,7 @@
         [["varbinary" "image"] "byte[]" true] ; cannot be null
         [["double" "float" "real"] "double"]
         [["decimal" "money" "numeric" "smallmoney"] "decimal"]
-        [["datetime" "timestamp" "date" "time"] "DateTime"]
+        [["datetime" "datetime2" "timestamp" "date" "time"] "DateTime"]
         [["datetimeoffset"] "DateTimeOffset"]
     ])
 (def new-line "\r\n")
