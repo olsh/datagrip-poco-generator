@@ -11,7 +11,7 @@ typeMapping = [
         (~/(?i)bigint/)                                 : "long",
         (~/(?i)varbinary|image/)                        : "byte[]",
         (~/(?i)double|float|real/)                      : "double",
-        (~/(?i)decimal|money|numeric|smallmoney/)       : "long",
+        (~/(?i)decimal|money|numeric|smallmoney/)       : "decimal",
         (~/(?i)datetime|datetime2|timestamp|date|time/) : "DateTime",
         (~/(?i)datetimeoffset/)                         : "DateTimeOffset",
         (~/(?i)^char$/)                                 : "char",
