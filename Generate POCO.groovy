@@ -12,8 +12,8 @@ typeMapping = [
         (~/(?i)varbinary|image/)                        : "byte[]",
         (~/(?i)double|float|real/)                      : "double",
         (~/(?i)decimal|money|numeric|smallmoney/)       : "decimal",
-        (~/(?i)datetime|datetime2|timestamp|date|time/) : "DateTime",
         (~/(?i)datetimeoffset/)                         : "DateTimeOffset",
+        (~/(?i)datetime|datetime2|timestamp|date|time/) : "DateTime",
         (~/(?i)^char$/)                                 : "char",
 ]
 
