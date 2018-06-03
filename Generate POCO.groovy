@@ -4,17 +4,17 @@ import com.intellij.database.util.Case
 import com.intellij.database.util.DasUtil
 
 typeMapping = [
-        (~/(?i)bit/)                                    : "bool",
-        (~/(?i)tinyint/)                                : "byte",
-        (~/(?i)uniqueidentifier|uuid/)                  : "Guid",
-        (~/(?i)int|integer/)                            : "int",
-        (~/(?i)bigint/)                                 : "long",
-        (~/(?i)varbinary|image/)                        : "byte[]",
-        (~/(?i)double|float|real/)                      : "double",
-        (~/(?i)decimal|money|numeric|smallmoney/)       : "decimal",
-        (~/(?i)datetimeoffset/)                         : "DateTimeOffset",
-        (~/(?i)datetime|datetime2|timestamp|date|time/) : "DateTime",
-        (~/(?i)^char$/)                                 : "char",
+        (~/(?i)^bit$/)                                    : "bool",
+        (~/(?i)^tinyint$/)                                : "byte",
+        (~/(?i)^uniqueidentifier|uuid$/)                  : "Guid",
+        (~/(?i)^int|integer$/)                            : "int",
+        (~/(?i)^bigint$/)                                 : "long",
+        (~/(?i)^varbinary|image$/)                        : "byte[]",
+        (~/(?i)^double|float|real$/)                      : "double",
+        (~/(?i)^decimal|money|numeric|smallmoney$/)       : "decimal",
+        (~/(?i)^datetimeoffset$/)                         : "DateTimeOffset",
+        (~/(?i)^datetime|datetime2|timestamp|date|time$/) : "DateTime",
+        (~/(?i)^char$/)                                   : "char",
 ]
 
 notNullableTypes = [ "string", "byte[]" ]
