@@ -7,7 +7,7 @@ typeMapping = [
         (~/(?i)^bit$/)                                    : "bool",
         (~/(?i)^tinyint$/)                                : "byte",
         (~/(?i)^uniqueidentifier|uuid$/)                  : "Guid",
-        (~/(?i)^int|integer$/)                            : "int",
+        (~/(?i)^int|integer|number$/)                     : "int",
         (~/(?i)^bigint$/)                                 : "long",
         (~/(?i)^varbinary|image$/)                        : "byte[]",
         (~/(?i)^double|float|real$/)                      : "double",
