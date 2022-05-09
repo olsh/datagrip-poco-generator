@@ -26,20 +26,25 @@ FILES.chooseDirectoryAndSave("Choose directory", "Choose where to store generate
 def generate(table, dir) {
     def className = csharpName(table.getName())
     def fields = calcFields(table)
-    new File(dir, className + ".cs").withPrintWriter { out -> generate(out, className, fields) }
+    new File(dir, className + ".cs").withPrintWriter { out -> generate(out, className, fields, table) }
 }
 
-def generate(out, className, fields) {
+def generate(out, className, fields, table) {
     out.println "using System;"
+    out.println "using System.ComponentModel.DataAnnotations;"
+    out.println "using System.ComponentModel.DataAnnotations.Schema;"
     out.println ""
+    out.println "[Table(\"${DasUtil.getSchema(table)}.${table.getName()}\")]"
     out.println "public class $className"
     out.println "{"
 
     fields.each() {
         out.println ""
+        out.println "    [Column(\"${it.columnName}\")]"
         out.println "    public ${it.type} ${it.name} { get; set; }"
-        out.println ""
+        
     }
+    out.println ""
     out.println "}"
 }
 
@@ -50,11 +55,13 @@ def calcFields(table) {
         def nullable = col.isNotNull() || typeStr in notNullableTypes ? "" : "?"
         fields += [[
                            name : csharpName(col.getName()),
-                           type : typeStr + nullable]]
+                           type : typeStr + nullable,
+                           columnName : col.getName()]]
     }
 }
 
 def csharpName(str) {
+    str = str.split(" ").collect({ Case.LOWER.apply(it).capitalize() }).join("")
     com.intellij.psi.codeStyle.NameUtil.splitNameIntoWords(str)
             .collect { Case.LOWER.apply(it).capitalize() }
             .join("")
